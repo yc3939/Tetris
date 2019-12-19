@@ -6,13 +6,11 @@ This is a mini project about Embedded System
 
 - [Background](#background)
 
-- [Requirement](#Requirement)
+- [Requirement](#requirement)
 
-- [Usage](#usage)
+- [Functions](#functions)
 
-- [Contributing](#contributing)
-
-- [License](#license)
+- [Techniques](#techniques)
 
 ## Background
 
@@ -30,8 +28,56 @@ Arduino UNO
 
 8*8 LED matrix with MAX7219
 
-## Usage
+Two LEDs
 
-## Contribution
+One 7-segment display
 
-## License
+## Functions
+
+void SPI_Init(void)//Initialize SPI
+
+void SPI_Transmit(char cData)//SPI.tansfer
+
+void writeMax7219(char reg,char data)//Write into the chip
+
+void SrightInitial(int k)//Let the first block shift right
+
+void SrightNext(int k)//Let following blocks shift right
+
+void SleftInitial(int k)//Let the first block shift left
+
+void SleftNext(int k)//Let the following blocks shift left
+
+void clearInitial(int k)//Clear the buffer called Showbuffer
+
+void clearNext(int k)//Clear Showbuffer and RolldownBuffer
+
+void testClr(int k)  //Test, if one line is full, then clear it
+
+void score(int k)//Count the score and display it on 7-segment
+
+void testTouch(int k)  //If one touch another during following, stop
+
+void lose(int k)//Stop the game
+
+void begin()//The flash at the beginning
+
+void Reflect(int k, int j)//Reflect the previous buffer into display buffer
+
+void InitialRoll(int k,int t)  //The first block roll
+
+void NextRoll(int k, int m)  //Next rolls
+
+void turnInitial(int k,int t)//The first block roll down
+
+void turnNext(int k, int m)//Other blocks roll down
+
+int main(void)//main function
+
+ISR (INT0_vect);//clear all the buffer and re-begin the game
+
+## Techniques
+
+The techniques used in this mini project are:
+
+SPI, interrupt, binary, 7-segment, switch
