@@ -12,6 +12,8 @@ This is a mini project about Embedded System
 
 - [Techniques](#techniques)
 
+- [SourceCodes](#sourceCodes)
+
 ## Background
 
 This is a mini project about Embedded System. In this project, the Tetris game can work as any other online Tetris games. 
@@ -81,3 +83,17 @@ ISR (INT0_vect);//clear all the buffer and re-begin the game
 The techniques used in this mini project are:
 
 SPI, interrupt, binary, 7-segment, switch
+
+## Source Code
+
+#include <avr/interrupt.h>
+
+#include <util/delay.h>
+
+#include <time.h>
+
+#include <stdio.h>
+
+#include <stdlib.h>
+
+#include <string.h>
